@@ -38,4 +38,22 @@ Initially the Q-function will be estimates as:
 Q(s, a) = 0
 
 
+The “td_qlearning” class has three member functions: “__init__”, “qvalue”, and “policy”.
+
+The function “__init__” is a constructor that takes one input argument. The input argument is the full path to
+a CSV file containing a single trajectory through the state space. The CSV file will contain two columns, the first with
+a string representation of the sate and the second with a string representation of the action taken in that state. The
+i'th row of the CSV file indicates the state-action pair at time i.
+
+The function “qvalue” takes two input arguments. The first input argument is a string representation of a state.
+The second input argument is the string representation of an action. The function outputs the Q-value
+associated with that state-action pair (according to the Q-function learned from the trajectory in the file passed to
+the __init__ function).
+
+The function “policy” takes one input argument. The input argument is a string representation of a state. The
+function outputs the optimal action (according to the Q-function learned from the trajectory in the file passed
+to the __init__ function).
+
+An example of a trajecory file is included in the repo.
+
 More info on Q Learning: https://towardsdatascience.com/simple-reinforcement-learning-q-learning-fcddc4b6fe56 
